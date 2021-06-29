@@ -1,0 +1,82 @@
+lol_champ_select_v1:
+  path: /lol-champ-select/v1
+
+  get_all_champions:
+    desc: 获取所有英雄
+    path: /all-grid-champions
+    method: GET
+
+
+  get_session:
+    desc: 获取英雄选择的会话
+    path: /session
+    method: GET
+
+  champ_select:
+    desc: 选择英雄
+    path: /session
+    method: PATCH
+
+lol_champ_select_legacy_v1:
+  path: /lol-champ-select-legacy/v1
+
+  is_champ_select:
+    desc: 是否在选择英雄
+    path: /implementation-active
+    method: GET
+
+  get_session:
+    desc: 获取当前会话
+    path: /session
+    method: GET
+
+  champ_select:
+    desc: 选择英雄
+    path: /session/actions/{id}
+    method: PATCH
+
+  action_complete:
+    desc: 完成当前动作
+    path: /session/actions/{id}complete
+    method: POST
+
+  get_current_champ:
+    desc: 获取当前的英雄(没锁定前获取不到)
+    path: /current-champion
+    method: GET
+
+lol_summoner_v1:
+  path: /lol-summoner/v1
+  get_current_summoner:
+    desc: 获取当前召唤师的信息
+    path: /current-summoner
+    method: GET
+
+lol_gameflow_v1:
+  path: /lol-gameflow/v1
+
+  get_gameflow_phase:
+    desc: 判断游戏流程到了哪个阶段
+    path: /gameflow-phase
+    method: GET
+
+lol_chat_v1:
+  path: /lol-chat/v1
+
+  send_public_message:
+    desc: 发送消息到公共聊天室
+    path: /conversations/{id}/messages
+    method: POST
+
+  get_conversations_info:
+    desc: 获取当前聊天室信息
+    path: /conversations
+    method: GET
+
+lol_champions_v1:
+  path: /lol-champions/v1
+
+  get_summ_champ_skins:
+    desc: 获取召唤师某个英雄的皮肤
+    path: /inventories/{summonerId}/champions/{championId}/skins
+    method: GET
